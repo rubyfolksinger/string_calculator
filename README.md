@@ -6,6 +6,7 @@ Dan Tripp's mesmerizing String Calculator: a response to a code challenge.
 ## Usage:
 
 `StringCalculator.add("1,2")` positive numbers, separated by a comma
+
 `StringCalculator.add("//;\n1;2;3")` to specify a different delimiter
 
 ---
