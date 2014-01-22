@@ -23,7 +23,7 @@ describe StringCalculator do
   end
 
   #req 3:
-  it "should treat newlines between numbers as a delimter" do
+  it "should treat newlines between numbers as a delimiter" do
     StringCalculator.add("1\n2,3").should == 6
   end
 
@@ -33,7 +33,7 @@ describe StringCalculator do
   end
 
   #req 4:
-  it "should allow an alterate delimeter to be specified" do
+  it "should allow an alterate delimiter to be specified" do
     StringCalculator.add("//;\n1;2").should == 3
   end
 
@@ -51,7 +51,7 @@ describe StringCalculator do
       StringCalculator.add("//;\n1;2;3").should == 6
     end
 
-    it "should treat newlines between numbers as a delimter" do
+    it "should treat newlines between numbers as a delimiter" do
       StringCalculator.add("//;\n1\n2;3").should == 6
     end
 
