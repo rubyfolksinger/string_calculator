@@ -6,7 +6,7 @@ class StringCalculator
     delimiter = ","
     delimiter = args.match(/^\/\/(.)/)[1] if args.match(/^\/\//)
 
-    raise StandardError, "last entry is missing" if args =~ /#{delimiter}\n$/
+    raise StandardError, "last number is missing" if args =~ /#{delimiter}\n$/
 
     total = 0
     input = args.split(/[#{delimiter}\n]/)
