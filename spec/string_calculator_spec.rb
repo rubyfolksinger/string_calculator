@@ -28,7 +28,12 @@ describe StringCalculator do
   end
 
   #req 3:
-  it "should raise an error if a newline is passed at the end" do
+  it "should not raise an error if the last entry has a newline at the end" do
+    expect{ StringCalculator.add("1\n") }.to_not raise_error
+  end
+
+  #req 3:
+  it "should raise an error if a newline is passed as the last element" do
     expect{ StringCalculator.add("1,\n") }.to raise_error
   end
 
@@ -55,7 +60,11 @@ describe StringCalculator do
       StringCalculator.add("//;\n1\n2;3").should == 6
     end
 
-    it "should raise an error if a newline is passed at the end" do
+    it "should not raise an error if the last entry has a newline at the end" do
+      expect{ StringCalculator.add("//;\n1;2\n") }.to_not raise_error
+    end
+
+    it "should raise an error if a newline is passed as the last element" do
       expect{ StringCalculator.add("//;\n1;\n") }.to raise_error
     end
   end

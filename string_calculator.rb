@@ -1,15 +1,12 @@
 class StringCalculator
   def self.add(args)
-    raise StandardError, "input cannot end with a newline" if args =~ /\n$/
-
     negatives = args.scan(/-[\d]?/)
     raise StandardError, "negatives not allowed: [#{negatives.join(',')}]" if negatives.size > 0
 
-    if args.match(/^\/\//)
-       delimiter = args.match(/^\/\/(.)/)[1]
-    else
-      delimiter = ","
-    end  
+    delimiter = ","
+    delimiter = args.match(/^\/\/(.)/)[1] if args.match(/^\/\//)
+
+    raise StandardError, "last entry is missing" if args =~ /#{delimiter}\n$/
 
     total = 0
     input = args.split(/[#{delimiter}\n]/)
